@@ -1,0 +1,7 @@
+Data Peserta Bootcamp Digital Skill Devops
+1. Nama: Fillah Zaki Alhaqi 
+2. Email: fillah.alhaqi11@gmail.com
+3. Sistem Operasi yang digunakan: Windows
+4. Akun Gitlab/Github: fillah21 (https://github.com/fillah21)
+5. Akun Telegram: @fillahalhaqi21
+6. Bahasa Pemrograman/Stack Yang dikuasai: Laravel, Next JS
