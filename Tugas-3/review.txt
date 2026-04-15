@@ -1,0 +1,33 @@
+SARAN PERBAIKAN DARI AI CHATGPT
+
+1. mkdir bisa error jika folder sudah ada
+    solusi : gunakan "mkdir -p backup-log" (-p membuat folder hanya jika belum ada)
+
+2. Tidak ada pengecekan apakah file sumber ada
+    Jika file sumber (syslog.txt) tidak ada, maka script akan gagal
+    solusi : tambah pengecekan 
+    if [ ! -f syslog.txt ]; then
+        echo "File syslog.txt tidak ditemukan"
+        exit 1
+    fi
+
+3. Tidak ada penanganan error
+    Saat mkdir atau cp gagal, script tetap lanjut tanpa memberi status yang jelas.
+    Solusi : 
+    Tambahkan:
+
+    set -e
+
+    di awal script agar berhenti saat ada error.
+
+4. Nama file backup tidak unik
+    Karena namanya tidak unik, file backup lama akan tertindih.
+    Solusi : tambahkan timestamp "cp syslog.txt backup-log/syslog-$(date +%Y%m%d-%H%M%S).txt"
+
+5. Tidak ada konfirmasi hasil backup
+    Tidak ada pesan ketika backup sudah berhasil dilakukan
+    Solusi : Tambahkan pesan ketika backup berhasil dilakukan, contoh echo "Backup berhasil"
+
+
+Pendapat saya mengenai hasil review AI ChatGPT adalah saya sangat setuju, karena memang kode
+yang saya tulis itu masih banyak celah error dan belum ada penanganan jika error terjadi.
