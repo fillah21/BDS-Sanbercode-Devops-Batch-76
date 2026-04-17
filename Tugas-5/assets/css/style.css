@@ -1,0 +1,136 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins";
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  background-color: white;
+  padding: 25px 0px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+header li {
+  margin-left: 50px;
+}
+
+.container_hero {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 300px 350px;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.container_hero-headline ul {
+  display: flex;
+}
+.container_hero-headline small {
+  padding: 20px 0px;
+  display: block;
+}
+
+.container_hero-headline a {
+  margin-right: 20px;
+}
+
+.container_describe {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 100px;
+  margin-left: 50px;
+  align-items: center;
+}
+
+.container_describe-animation {
+  background-color: #203239;
+  padding: 50px 200px;
+  color: white;
+  font-size: 150px;
+}
+
+.container_describe-info__card {
+  border: 3px solid black;
+  padding: 50px;
+  text-align: left;
+  margin-left: 200px;
+}
+
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.fa-thumbs-up {
+  animation: rotateRight 1s infinite alternate;
+}
+
+footer {
+  padding-left: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container-history {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 100px 350px 0px;
+}
+
+.container-history__motto {
+  padding: 100px 0px;
+}
+
+th {
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+}
+
+.container-wrapping {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 200px 350px;
+}
+
+.container-wrapping__card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container-wrapping__card img {
+  width: 100%;
+  max-width: 200px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container-wrapping__card img:hover {
+  transform: scale(1.5);
+}
