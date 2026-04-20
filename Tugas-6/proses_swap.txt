@@ -1,0 +1,5 @@
+- jalankan 'sudo fallocate -l 2G /swapfile untuk mengalokasikan memori sebesar 2GB
+- set permission ke swap tersebut dengan menjalankan 'sudo chmod 600 /swapfile'
+- format memori tersebut sebagai swap dengan cara jalankan 'sudo mkswap /swapfile'
+- aktifkan swap dengan jalankan 'sudo swapon /swapfile
+- lalu edit file 'sudo nano /etc/fstab' dan tambahkan '/swapfile none swap sw 0 0' untuk permanenkan swap agar tidak hilang saat reebot
