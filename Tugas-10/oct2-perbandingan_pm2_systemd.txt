@@ -1,0 +1,31 @@
+Setelah saya menggunakan kedua service tersebut (pm2 dan systemd) dan mencari tahu lebih dalam dengan cara diskusi dengan AI
+saya dapat menyimpulkan bahwa :
+
+1. PM2
+PM2 adalah process manager berbasis Node.js.
+
+* Kelebihan:
+    - Mudah digunakan (simple command)
+    - Bisa manage banyak aplikasi sekaligus
+    - Ada fitur log (pm2 logs)
+    - Auto restart jika aplikasi crash
+    - Cocok untuk development dan project kecil
+
+* Kekurangan:
+    - Bergantung pada Node.js
+    - Bukan service native Linux
+    - Kurang optimal untuk aplikasi non-Node (seperti Golang)
+
+2. systemd
+systemd adalah process manager bawaan Linux.
+
+* Kelebihan:
+    - Native OS (lebih stabil)
+    - Tidak butuh dependency tambahan
+    - Cocok untuk production
+    - Support auto-start saat boot
+    - Lebih efisien untuk aplikasi binary seperti Golang
+* Kekurangan:
+    - Konfigurasi lebih kompleks
+    - Tidak sefleksibel PM2
+    - Tidak ada fitur monitoring bawaan seperti PM2
