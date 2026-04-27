@@ -1,0 +1,56 @@
+🔹 Hasil dari AI (Disesuaikan & Dirapikan)
+MySQL / MariaDB Configuration
+[mysqld]
+
+innodb_buffer_pool_size = 64M
+max_connections = 20
+query_cache_size = 8M
+key_buffer_size = 16M
+tmp_table_size = 16M
+max_heap_table_size = 16M
+thread_cache_size = 8
+performance_schema = OFF
+
+
+1. innodb_buffer_pool_size = 64M
+    Fungsi: buffer utama untuk InnoDB
+    Alasan:
+    RAM kecil → tidak bisa besar
+    Dialokasikan ±12% dari total RAM
+    Tujuan: mencegah penggunaan memory berlebih
+
+2. max_connections = 20
+    Fungsi: batas koneksi database
+    Alasan:
+    Setiap koneksi makan RAM
+    Node.js biasanya pakai connection pool
+    Tujuan: mencegah lonjakan memory
+
+3. query_cache_size = 8M
+    Fungsi: cache query
+    Alasan:
+    Kecil agar tidak membebani RAM
+    Tujuan: tetap ada cache tanpa boros
+
+4. key_buffer_size = 16M
+    Fungsi: buffer untuk MyISAM
+    Alasan:
+    Jarang dipakai → cukup kecil
+    Tujuan: efisiensi memory
+5. tmp_table_size = 16M
+
+6. max_heap_table_size = 16M
+    Fungsi: limit tabel sementara di RAM
+    Alasan:
+    Query besar bisa makan RAM banyak
+    Tujuan: mencegah memory spike
+
+7. thread_cache_size = 8
+    Fungsi: cache thread koneksi
+    Tujuan: efisiensi CPU & memory
+    
+8. performance_schema = OFF
+    Fungsi: monitoring internal MySQL
+    Alasan:
+    Boros RAM di server kecil
+    Tujuan: hemat resource
