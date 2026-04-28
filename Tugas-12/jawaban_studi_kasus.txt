@@ -1,0 +1,9 @@
+"Kenapa sih kita harus rajin melakukan apt purge atau menghapus servis yang nggak kepakai 
+kayak MySQL/Postgres tadi sebelum kita instal SSL dan rilis ke publik? 
+Apa hubungannya sama keamanan dan performa server?"
+
+Dari sisi keamanan, service yang tidak digunakan akan tetap membuka port 
+dan menambah kemungkinan potensi serangan dari luar.
+
+Dari sisi performa, service yang tidak digunakan akan mengkonsumi resource yang ada,
+dimana pada VPS dengan spesifikasi kecil berpotensi terjadinya server down, error, dan sebagainya.
