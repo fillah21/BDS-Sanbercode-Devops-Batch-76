@@ -1,0 +1,21 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Test-Pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run simple echo
+        run: |
+          echo "Pipeline Berjalan!"
+          echo "Secret Key: $MY_SECRET_KEY"
+        env:
+          MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
