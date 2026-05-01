@@ -34,7 +34,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: hasil-build-web
-          path: dist/
+          path: .
 
       - name: Copy Artifact to VPS
         uses: appleboy/scp-action@v0.1.7
@@ -54,4 +54,4 @@ jobs:
           script: |
             echo "Deploy Berhasil!"
             sudo systemctl restart nginx
-            ls -lah /home/${{ secrets.SERVER_USERNAME }}/deploy-test
+            ls -lah /var/www/aplikasi-saya
